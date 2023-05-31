@@ -1,4 +1,4 @@
-<?php include 'koneksi.php';?>
+<?php // include 'koneksi.php';?>
 
 
 <!DOCTYPE html>
@@ -43,25 +43,25 @@
 </div>
 <!-- Konten Kanan -->
 <div class="right">
-    <!-- Navigasi Atas Status dan User -->
     <div class="topNav">
         <div class="containerTopNav">
             <div class="topNavLeft">Rp.10.000</div>
             <div class="topNavRight">Rissa Nussy</div>
         </div>
     </div>
-    <!-- Content  -->
     <div class="containerRight">
         <div class="content">
-           <h1>Top Up</h1>
-           <form method="post">
-                <input type="number" name="nominal" placeholder="masukkan jumlah uang">
-                <button>submit</button>
+
+            <h1>Judul</h1>
+            
+            <form method="post">
+                <input type="number" name="nominal" placeholder="masukkan jumlah uang"></input>
+                <button type="submit">submit</button>
             </form>
+
         </div>
     </div>
 </div>
-
 
 
     

@@ -10,14 +10,16 @@
 
     function tambah_saldo(){
         if($_POST) {
+            global $saldo, $nama, $id, $koneksi;
             $nominalTopUp = $_POST["nominal"];
             $tambahSaldo = $saldo + $nominalTopUp;
 
-            $tambah = mysqli_query($koneksi, "INSERT INTO users(saldo) VALUES ('$tambahSaldo')");
+            $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = saldo + $nominalTopUp where $id ");
+
         }
     }
-
-
+    
+    tambah_saldo();
 
 ?>
 
@@ -44,7 +46,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
     <!-- Tugas Webpulsa CSS -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 <!-- Navigasi Kiri -->
@@ -76,7 +78,7 @@
     <div class="containerRight">
         <div class="content">
            <h1>Top Up</h1>
-           <form method="get">
+           <form method="post">
                 <input type="number" name="nominal" placeholder="masukkan jumlah uang">
                 <button type="submit">submit</button>
             </form>
