@@ -45,8 +45,10 @@
 <div class="right">
     <div class="topNav">
         <div class="containerTopNav">
-            <div class="topNavLeft">Rp.10.000</div>
-            <div class="topNavRight">Rissa Nussy</div>
+        <?php while($row = mysqli_fetch_assoc($users)) { ?> 
+            <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3>Rp. <?= $row['saldo'] ?></h3></div>
+            <div class="topNavRight"><h5><?= $row['nama'] ?></h5>&nbsp;&nbsp;<i class="fa-regular fa-circle-user fa-xl"></i></div>
+        <?php } ?>
         </div>
     </div>
     <div class="containerRight">
@@ -57,6 +59,15 @@
                     <input type="number" name="nominal" placeholder="masukkan jumlah uang"></input><br>
                     <button type="submit">submit</button>
                 </form>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
             </div>
         </div>
     </div>

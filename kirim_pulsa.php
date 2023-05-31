@@ -87,7 +87,7 @@
     <!-- Content  -->
     <div class="containerRight">
         <div class="content">
-           <h1>Top Up</h1>
+           <h1>Pulsa</h1>
            <form method="post">
                 <input type="number" name="nominal" placeholder="masukkan jumlah uang">
                 <br>

@@ -1,5 +1,21 @@
 <?php include 'koneksi.php';?>
+<?php
+    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    while($row = mysqli_fetch_assoc($hasil)){
+        $id = $row["id_users"];
+        $nama = $row["nama"];
+        $saldo = $row["saldo"];
+    }
 
+    function get_info() {
+        global $saldo, $nama, $id, $koneksi;
+        $index = 1;
+        $buku = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=$id");
+    }
+
+    get_info();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,15 +62,100 @@
     <!-- Navigasi Atas Status dan User -->
     <div class="topNav">
         <div class="containerTopNav">
-            <div class="topNavLeft">Rp.10.000</div>
-            <div class="topNavRight">Rissa Nussy</div>
+        <?php while($row = mysqli_fetch_assoc($users)) { ?> 
+            <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3>Rp. <?= $row['saldo'] ?></h3></div>
+            <div class="topNavRight"><h5><?= $row['nama'] ?></h5>&nbsp;&nbsp;<i class="fa-regular fa-circle-user fa-xl"></i></div>
+        <?php } ?>
         </div>
     </div>
     <!-- Content  -->
     <div class="containerRight">
         <div class="content">
            <h1>Riwayat</h1>
-            
+           <table id="riwayatTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>No Telp</th>
+                    <th>Nominal</th>
+                    <th>Provider</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+                <tr>
+                    <td>1 Juni 2023</td>
+                    <td>08810181081</td>
+                    <td>10.000</td>
+                    <td>XL</td>
+                </tr>
+            </tbody>
+            </table>
         </div>
     </div>
 </div>
@@ -66,7 +167,7 @@
     <!-- dataTable JS -->
     <script>
         $(document).ready(function () {
-        $('#test').DataTable();
+        $('#riwayatTable').DataTable();
     });
     </script>
 <!-- Bootstrap JS -->
