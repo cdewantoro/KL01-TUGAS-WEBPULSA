@@ -53,7 +53,7 @@ body {
     justify-content: space-between;
 }
 
-.right {
+/* .right {
     height:100%;
     margin-left: 20%;
     overflow: auto;
@@ -61,9 +61,9 @@ body {
 
 .rightContainer {
     display:flex;  
-}
+} */
 
-.topNav {
+/* .topNav {
     position: fixed;
     height:10%;
     background-color: var(--grayTopNav);
@@ -75,14 +75,14 @@ body {
     display:flex;
     width:100%;
     flex-direction: row;
-}
+} */
 
-.topNavLeft, .topNavRight {
+/* .topNavLeft, .topNavRight {
     width:50%;
     display:flex;
-}
-
+} */
+/* 
 .content {
     padding:8% 5%;
 
-}
+} */

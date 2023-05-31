@@ -1,5 +1,25 @@
 <?php include 'koneksi.php';?>
+<?php
+    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    while($row = mysqli_fetch_assoc($hasil)){
+        $id = $row["id_users"];
+        $nama = $row["nama"];
+        $saldo = $row["saldo"];
+    }
 
+    function tambah_saldo(){
+        if($_POST) {
+            $nominalTopUp = $_POST["nominal"];
+            $tambahSaldo = $saldo + $nominalTopUp;
+
+            $tambah = mysqli_query($koneksi, "INSERT INTO users(saldo) VALUES ('$tambahSaldo')");
+        }
+    }
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +44,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
     <!-- Tugas Webpulsa CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
 <!-- Navigasi Kiri -->
@@ -46,17 +66,19 @@
     <!-- Navigasi Atas Status dan User -->
     <div class="topNav">
         <div class="containerTopNav">
-            <div class="topNavLeft">Rp.10.000</div>
-            <div class="topNavRight">Rissa Nussy</div>
+        <?php while($row = mysqli_fetch_assoc($users)) { ?> 
+            <div class="topNavLeft">Rp. <?= $row['saldo'] ?></div>
+            <div class="topNavRight"><?= $row['nama'] ?></div>
+        <?php } ?>
         </div>
     </div>
     <!-- Content  -->
     <div class="containerRight">
         <div class="content">
            <h1>Top Up</h1>
-           <form method="post">
+           <form method="get">
                 <input type="number" name="nominal" placeholder="masukkan jumlah uang">
-                <button>submit</button>
+                <button type="submit">submit</button>
             </form>
         </div>
     </div>

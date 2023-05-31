@@ -53,11 +53,8 @@
     <!-- Content  -->
     <div class="containerRight">
         <div class="content">
-           <h1>Top Up</h1>
-           <form method="post">
-                <input type="number" name="nominal" placeholder="masukkan jumlah uang">
-                <button>submit</button>
-            </form>
+           <h1>Riwayat</h1>
+            
         </div>
     </div>
 </div>
