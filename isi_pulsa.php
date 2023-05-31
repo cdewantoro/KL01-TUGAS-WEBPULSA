@@ -8,6 +8,14 @@
         $saldo = $row["saldo"];
     }
 
+    function get_info() {
+        global $saldo, $nama, $id, $koneksi;
+        $index = 1;
+        $buku = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=$id");
+    }
+
+    get_info();
+
     function tambah_saldo(){
         if($_POST) {
             global $saldo, $nama, $id, $koneksi;
@@ -55,9 +63,9 @@
         <div class="leftTop">
             <h1>ADMIN</h1>
             <ul>
-                <li><a href="#">Top Up</a></li>
-                <li><a href="#">Kirim Pulsa</a></li>
-                <li><a href="#">Riwayat</a></li>
+                <li><a href="isi_pulsa.php">Top Up</a></li>
+                <li><a href="kirim_pulsa.php">Kirim Pulsa</a></li>
+                <li><a href="riwayat.php">Riwayat</a></li>
             </ul>
         </div>
         <div class="leftFoot"><a href="#">Log Out</a></div>
@@ -80,6 +88,7 @@
            <h1>Top Up</h1>
            <form method="post">
                 <input type="number" name="nominal" placeholder="masukkan jumlah uang">
+                <br>
                 <button type="submit">submit</button>
             </form>
         </div>

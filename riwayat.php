@@ -33,9 +33,9 @@
         <div class="leftTop">
             <h1>ADMIN</h1>
             <ul>
-                <li><a href="#">Top Up</a></li>
-                <li><a href="#">Kirim Pulsa</a></li>
-                <li><a href="#">Riwayat</a></li>
+            <li><a href="isi_pulsa.php">Top Up</a></li>
+                <li><a href="kirim_pulsa.php">Kirim Pulsa</a></li>
+                <li><a href="riwayat.php">Riwayat</a></li>
             </ul>
         </div>
         <div class="leftFoot"><a href="#">Log Out</a></div>
