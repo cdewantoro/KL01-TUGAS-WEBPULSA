@@ -40,6 +40,17 @@ body {
     top: 0;
     width: 20%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerLeft {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .right {
@@ -49,7 +60,7 @@ body {
 }
 
 .rightContainer {
-
+    display:flex;  
 }
 
 .topNav {
@@ -57,4 +68,21 @@ body {
     height:10%;
     background-color: var(--grayTopNav);
     width:100%;
+}
+
+.containerTopNav {
+    justify-content: space-between;
+    display:flex;
+    width:100%;
+    flex-direction: row;
+}
+
+.topNavLeft, .topNavRight {
+    width:50%;
+    display:flex;
+}
+
+.content {
+    padding:8% 5%;
+
 }

@@ -25,41 +25,48 @@
 </head>
 <body>
 <div class="left">
-    <h1>ADMIN</h1>
-    <ul>
-        <li>Top Up</li>
-        <li>Kirim Pulsa</li>
-        <li>Riwayat</li>
-    </ul>
+    <div class="containerLeft">
+        <div class="leftTop">
+            <h1>ADMIN</h1>
+            <ul>
+                <li>Top Up</li>
+                <li>Kirim Pulsa</li>
+                <li>Riwayat</li>
+            </ul>
+        </div>
+        <div class="leftFoot">Log Out</div>
+</div>
 </div>
 <div class="right">
     <div class="topNav">
-        <div class="topNavLeft">Rp.10.000</div>
-        <div class="topNavRight">Rissa Nussy</div>
+        <div class="containerTopNav">
+            <div class="topNavLeft">Rp.10.000</div>
+            <div class="topNavRight">Rissa Nussy</div>
+        </div>
     </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+    <div class="containerRight">
+        <div class="content">
+            <h1>Judul</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat possimus molestias hic error quia repudiandae omnis. Voluptatem rem, nisi mollitia earum quas necessitatibus minus rerum esse laboriosam doloremque! Numquam.</p>
+        </div>
+    </div>
 </div>
 
 
