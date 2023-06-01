@@ -16,20 +16,44 @@
 
     get_info();
 
-    function tambah_saldo(){
+    // function tambah_saldo(){
+    //     if($_POST) {
+    //         global $saldo, $nama, $id, $koneksi;
+    //         $nominalTopUp = $_POST["nominal"];
+    //         $tambahSaldo = $saldo + $nominalTopUp;
+
+    //         $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = saldo + $nominalTopUp where $id ");
+
+    //         // $tambahRiwayat = mysqli_query($koneksi, )
+
+    //     }
+    // }
+    // tambah_saldo();
+
+    function isi_pulsa(){
         if($_POST) {
             global $saldo, $nama, $id, $koneksi;
             $nominalTopUp = $_POST["nominal"];
-            $tambahSaldo = $saldo + $nominalTopUp;
 
-            $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = saldo + $nominalTopUp where $id ");
+            $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = saldo - $nominalTopUp where $id ");
 
-            // $tambahRiwayat = mysqli_query($koneksi, )
+            $no_kartu = $_POST['no_kartu'];
+            $provider = $_POST['provider'];
+            $nominal = $_POST['nominal'];
+            $no_kartu = $_POST['no_kartu'];
+            $provider = $_POST['provider'];
+            $tanggal = $_POST['tanggal'];
+            $id_users = $_POST['id_users'];
 
+            $isi_pulsa = mysqli_query($koneksi, "INSERT INTO riwayat (no_kartu, provider, nominal, tanggal, id_users) VALUES ('$no_kartu', '$provider', '$nominal', '$tanggal', '$id_users')");
+
+            // INSERT INTO `riwayat` (`id`, `no_kartu`, `provider`, `nominal`, `tanggal`, `id_users`) VALUES ('2', '0817042525', 'XL', '10000', '2023-06-01', '1');
+            
         }
+        return get_info();
     }
-    
-    tambah_saldo();
+
+    isi_pulsa();
 
 ?>
 
@@ -89,6 +113,8 @@
         <div class="content">
            <h1>Pulsa</h1>
            <form method="post">
+                <input type="number" name="id_users" value="1" display="hidden">
+                <input type="date" name="tanggal" value='<?php date('Y-m-d'); ?>' >
                 <input type="number" name="no_kartu" placeholder="masukkan no hp">
                 <br>
                 <input type="number" name="nominal" placeholder="masukkan jumlah pulsa">
