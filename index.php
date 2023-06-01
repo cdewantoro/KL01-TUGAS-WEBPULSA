@@ -1,5 +1,21 @@
-<?php // include 'koneksi.php';?>
+<?php include 'koneksi.php';?>
+<?php
+    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    while($row = mysqli_fetch_assoc($hasil)){
+        $id = $row["id_users"];
+        $nama = $row["nama"];
+        $saldo = $row["saldo"];
+    }
 
+    function get_info() {
+        global $saldo, $nama, $id, $koneksi;
+        $index = 1;
+        $buku = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=$id");
+    }
+
+    get_info();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,14 +47,14 @@
 <div class="left">
     <div class="containerLeft">
         <div class="leftTop">
-            <h1>ADMIN</h1>
+            <h1><i><a href="index.php">ADMIN</a></i></h1>
             <ul>
              <li><a href="isi_pulsa.php">Top Up</a></li>
                 <li><a href="kirim_pulsa.php">Kirim Pulsa</a></li>
                 <li><a href="riwayat.php">Riwayat</a></li>
             </ul>
         </div>
-        <div class="leftFoot"><a href="#">Log Out</a></div>
+        <div class="leftFoot"><a href="#"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Log Out</a></div>
     </div>
 </div>
 <!-- Konten Kanan -->
@@ -48,29 +64,18 @@
         <?php while($row = mysqli_fetch_assoc($users)) { ?> 
             <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3>Rp. <?= $row['saldo'] ?></h3></div>
             <div class="topNavRight"><h5><?= $row['nama'] ?></h5>&nbsp;&nbsp;<i class="fa-regular fa-circle-user fa-xl"></i></div>
-        <?php } ?>
+        
         </div>
     </div>
     <div class="containerRight">
         <div class="content">
             <div class="contentContainer">
-                <h1>Judul</h1>
-                <form method="post">
-                    <input type="number" name="nominal" placeholder="masukkan jumlah uang"></input><br>
-                    <button type="submit">submit</button>
-                </form>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime labore laborum aliquid, molestiae blanditiis, aperiam ut ab sint sapiente nesciunt dolorum odit soluta reiciendis, deleniti dicta tempore fugit pariatur amet.</p>
-            </div>
+                <h1>Selamat Datang <?= $row['nama'] ?></h1>
+             </div>
         </div>
+        <?php } ?>
     </div>
+    
 </div>
 
 

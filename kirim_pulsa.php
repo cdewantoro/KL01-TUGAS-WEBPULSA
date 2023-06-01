@@ -63,14 +63,14 @@
 <div class="left">
     <div class="containerLeft">
         <div class="leftTop">
-            <h1><i>ADMIN</i></h1>
+            <h1><i><a href="index.php">ADMIN</a></i></h1>
             <ul>
                 <li><a href="isi_pulsa.php">Top Up</a></li>
                 <li><a href="kirim_pulsa.php">Kirim Pulsa</a></li>
                 <li><a href="riwayat.php">Riwayat</a></li>
             </ul>
         </div>
-        <div class="leftFoot"><a href="#">Log Out</a></div>
+        <div class="leftFoot"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> <a href="#">Log Out</a></div>
     </div>
 </div>
 <!-- Konten Kanan -->
@@ -89,8 +89,18 @@
         <div class="content">
            <h1>Pulsa</h1>
            <form method="post">
-                <input type="number" name="nominal" placeholder="masukkan jumlah uang">
+                <input type="number" name="no_kartu" placeholder="masukkan no hp">
                 <br>
+                <input type="number" name="nominal" placeholder="masukkan jumlah pulsa">
+                <br>
+                <input type="radio" class="btn-check" name="provider" value="XL" id="XL" autocomplete="off">
+                <label class="btn btn-outline-primary" for="XL">XL</label>&nbsp;&nbsp;
+                <input type="radio" class="btn-check" name="provider" value="TELKOMSEL" id="TELKOMSEL" autocomplete="off">
+                <label class="btn btn-outline-primary" for="TELKOMSEL">TELKOMSEL</label>&nbsp;&nbsp;
+                <input type="radio" class="btn-check" name="provider" VALUE="THREE" id="THREE" autocomplete="off">
+                <label class="btn btn-outline-primary" for="THREE">THREE</label>&nbsp;&nbsp;
+                <input type="radio" class="btn-check"name="provider" VALUE="IM3" id="IM3" autocomplete="off">
+                <label class="btn btn-outline-primary" for="IM3">IM3</label><br><br>
                 <button type="submit">Kirim</button>
             </form>
         </div>

@@ -23,7 +23,9 @@
             $tambahSaldo = $saldo + $nominalTopUp;
 
             $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = saldo + $nominalTopUp where $id ");
+            
 
+            
             // $tambahRiwayat = mysqli_query($koneksi, )
 
         }
@@ -63,14 +65,14 @@
 <div class="left">
     <div class="containerLeft">
         <div class="leftTop">
-            <h1><i>ADMIN</i></h1>
+            <h1><i><a href="index.php">ADMIN</a></i></h1>
             <ul>
                 <li><a href="isi_pulsa.php">Top Up</a></li>
                 <li><a href="kirim_pulsa.php">Kirim Pulsa</a></li>
                 <li><a href="riwayat.php">Riwayat</a></li>
             </ul>
         </div>
-        <div class="leftFoot"><a href="#">Log Out</a></div>
+        <div class="leftFoot"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> <a href="#">Log Out</a></div>
     </div>
 </div>
 <!-- Konten Kanan -->
