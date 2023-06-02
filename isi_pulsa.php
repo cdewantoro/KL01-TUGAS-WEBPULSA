@@ -8,14 +8,6 @@
         $saldo = $row["saldo"];
     }
 
-    function get_info() {
-        global $saldo, $nama, $id, $koneksi;
-        $index = 1;
-        $buku = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=$id");
-    }
-
-    get_info();
-
     function tambah_saldo(){
         if($_POST) {
             global $saldo, $nama, $id, $koneksi;
@@ -23,10 +15,6 @@
             $tambahSaldo = $saldo + $nominalTopUp;
 
             $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = saldo + $nominalTopUp where $id ");
-            
-
-            
-            // $tambahRiwayat = mysqli_query($koneksi, )
 
         }
     }
@@ -72,7 +60,7 @@
                 <li><a href="riwayat.php">Riwayat</a></li>
             </ul>
         </div>
-        <div class="leftFoot"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> <a href="#">Log Out</a></div>
+        <div class="leftFoot"><a href="#"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Log Out</a></div>
     </div>
 </div>
 <!-- Konten Kanan -->

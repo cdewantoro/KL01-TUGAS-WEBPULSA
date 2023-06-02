@@ -8,14 +8,6 @@
         $saldo = $row["saldo"];
     }
 
-    function get_info() {
-        global $saldo, $nama, $id, $koneksi;
-        $index = 1;
-        $buku = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=$id");
-    }
-
-    get_info();
-
     // function tambah_saldo(){
     //     if($_POST) {
     //         global $saldo, $nama, $id, $koneksi;
@@ -30,7 +22,7 @@
     // }
     // tambah_saldo();
 
-    function isi_pulsa(){
+    function kirim_pulsa(){
         if($_POST) {
             global $saldo, $nama, $id, $koneksi;
             $nominalTopUp = $_POST["nominal"];
@@ -50,10 +42,10 @@
             // INSERT INTO `riwayat` (`id`, `no_kartu`, `provider`, `nominal`, `tanggal`, `id_users`) VALUES ('2', '0817042525', 'XL', '10000', '2023-06-01', '1');
             
         }
-        return get_info();
+        // return get_info();
     }
 
-    isi_pulsa();
+    kirim_pulsa();
 
 ?>
 
@@ -94,7 +86,7 @@
                 <li><a href="riwayat.php">Riwayat</a></li>
             </ul>
         </div>
-        <div class="leftFoot"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> <a href="#">Log Out</a></div>
+        <div class="leftFoot"><a href="#"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Log Out</a></div>
     </div>
 </div>
 <!-- Konten Kanan -->
@@ -113,7 +105,7 @@
         <div class="content">
            <h1>Pulsa</h1>
            <form method="post">
-                <input type="number" name="id_users" value="1" display="hidden">
+                <input type="hidden" name="id_users" value="1">
                 <input type="date" name="tanggal" value='<?php date('Y-m-d'); ?>' >
                 <input type="number" name="no_kartu" placeholder="masukkan no hp">
                 <br>
