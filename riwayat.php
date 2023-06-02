@@ -1,20 +1,17 @@
-<?php include 'koneksi.php';?>
 <?php
-    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
-    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
-    while($row = mysqli_fetch_assoc($hasil)){
-        $id = $row["id_users"];
-        $nama = $row["nama"];
-        $saldo = $row["saldo"];
+include 'koneksi.php';
+
+$id_riwayat = 1;
+
+$hasil = mysqli_query($koneksi, "SELECT * FROM riwayat WHERE id_riwayat = $id_riwayat");
+
+if (mysqli_num_rows($hasil) > 0) {
+    while ($row = mysqli_fetch_assoc($hasil)) {
+        $riwayat[] = $row;
     }
-
-    // function get_info() {
-    //     global $saldo, $nama, $id, $koneksi;
-    //     $index = 1;
-    //     $buku = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=$id");
-    // }
-
-    // get_info();
+} else {
+    echo "Tidak ada data yang sesuai dengan kondisi";
+}
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +46,7 @@
         <div class="leftTop">
             <h1><i><a href="index.php">ADMIN</a></i></h1>
             <ul>
-            <li><a href="isi_pulsa.php">Top Up</a></li>
+                <li><a href="isi_pulsa.php">Top Up</a></li>
                 <li><a href="kirim_pulsa.php">Kirim Pulsa</a></li>
                 <li><a href="riwayat.php">Riwayat</a></li>
             </ul>
@@ -62,47 +59,49 @@
     <!-- Navigasi Atas Status dan User -->
     <div class="topNav">
         <div class="containerTopNav">
-        <?php while($row = mysqli_fetch_assoc($users)) { ?> 
-            <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3>Rp. <?= $row['saldo'] ?></h3></div>
-            <div class="topNavRight"><h5><?= $row['nama'] ?></h5>&nbsp;&nbsp;<i class="fa-regular fa-circle-user fa-xl"></i></div>
-        <?php } ?>
+            <?php foreach ($riwayat as $row) { ?>
+                <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3></h3></div>
+                <div class="topNavRight"><h5></h5>&nbsp;&nbsp;<i class="fa-regular fa-circle-user fa-xl"></i></div>
+            <?php } ?>
         </div>
     </div>
     <!-- Content  -->
     <div class="containerRight">
         <div class="content">
-           <h1>Riwayat</h1>
-           <table id="riwayatTable" class="display" style="width:100%">
-            <thead>
+            <h1>Riwayat</h1>
+            <table id="riwayatTable" class="display" style="width:100%">
+                <thead>
                 <tr>
                     <th>Tanggal</th>
                     <th>No Telp</th>
                     <th>Nominal</th>
                     <th>Provider</th>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1 Juni 2023</td>
-                    <td>08810181081</td>
-                    <td>10.000</td>
-                    <td>XL</td>
-                </tr>
-            </tbody>
+                </thead>
+                <tbody>
+                <?php foreach ($riwayat as $row) { ?>
+                    <tr>
+                        <td><?php echo $row["tanggal"]; ?></td>
+                        <td><?php echo $row["no_kartu"]; ?></td>
+                        <td><?php echo $row["nominal"]; ?></td>
+                        <td><?php echo $row["provider"]; ?></td>
+                    </tr>
+                <?php } ?>
+                </tbody>
             </table>
         </div>
     </div>
 </div>
-    
+
 <!-- JS for bootstrap & dataTable -->
-    <!-- dataTable JS -->
-    <script>
-        $(document).ready(function () {
+<!-- dataTable JS -->
+<script>
+    $(document).ready(function () {
         $('#riwayatTable').DataTable();
     });
-    </script>
+</script>
 <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
 </html>

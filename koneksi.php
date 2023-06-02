@@ -1,9 +1,9 @@
 <?php
 
-$host = "db4free.net:3306";
-$user = "genbox";
-$pass = "genbox12345";
-$DB = "genboxpulsaweb";
+$host = "localhost";
+$user = "root";
+$pass = "";
+$DB = "genboxpulsa";
 
 $koneksi = mysqli_connect($host,$user,$pass,$DB);
 
