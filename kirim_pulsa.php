@@ -1,9 +1,9 @@
 <?php include 'koneksi.php';?>
 <?php
-    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
-    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id=1");
+    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id=1");
     while($row = mysqli_fetch_assoc($hasil)){
-        $id = $row["id_users"];
+        $id = $row["id"];
         $nama = $row["nama"];
         $saldo = $row["saldo"];
     }
@@ -35,9 +35,9 @@
             $no_kartu = $_POST['no_kartu'];
             $provider = $_POST['provider'];
             $tanggal = $_POST['tanggal'];
-            $id_users = $_POST['id_users'];
+          
+            $isi_pulsa = mysqli_query($koneksi, "INSERT INTO riwayat (no_kartu, provider, nominal, tanggal) VALUES ('$no_kartu', '$provider', '$nominal', '$tanggal')");
 
-            $isi_pulsa = mysqli_query($koneksi, "INSERT INTO riwayat (no_kartu, provider, nominal, tanggal, id_users) VALUES ('$no_kartu', '$provider', '$nominal', '$tanggal', '$id_users')");
 
             // INSERT INTO `riwayat` (`id`, `no_kartu`, `provider`, `nominal`, `tanggal`, `id_users`) VALUES ('2', '0817042525', 'XL', '10000', '2023-06-01', '1');
             
