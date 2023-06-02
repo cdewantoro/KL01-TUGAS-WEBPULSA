@@ -1,33 +1,27 @@
 <?php include 'koneksi.php';?>
 <?php
-    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id=1");
-    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id=1");
+    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+
+    $allUser = mysqli_query($koneksi, "SELECT * FROM users");
+
     while($row = mysqli_fetch_assoc($hasil)){
-        $id = $row["id"];
+        $id = $row["id_users"];
         $nama = $row["nama"];
         $saldo = $row["saldo"];
     }
 
-    // function tambah_saldo(){
-    //     if($_POST) {
-    //         global $saldo, $nama, $id, $koneksi;
-    //         $nominalTopUp = $_POST["nominal"];
-    //         $tambahSaldo = $saldo + $nominalTopUp;
-
-    //         $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = saldo + $nominalTopUp where $id ");
-
-    //         // $tambahRiwayat = mysqli_query($koneksi, )
-
-    //     }
-    // }
-    // tambah_saldo();
+    while($display = mysqli_fetch_assoc($allUser)) {
+        $lihatID = $display["nama"];
+    }
 
     function kirim_pulsa(){
         if($_POST) {
             global $saldo, $nama, $id, $koneksi;
             $nominalTopUp = $_POST["nominal"];
 
-            $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = saldo - $nominalTopUp where $id ");
+            $finalSaldo = $saldo - $nominalTopUp;
+            $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = $finalSaldo where $id ");
 
             $no_kartu = $_POST['no_kartu'];
             $provider = $_POST['provider'];
@@ -35,9 +29,9 @@
             $no_kartu = $_POST['no_kartu'];
             $provider = $_POST['provider'];
             $tanggal = $_POST['tanggal'];
-          
-            $isi_pulsa = mysqli_query($koneksi, "INSERT INTO riwayat (no_kartu, provider, nominal, tanggal) VALUES ('$no_kartu', '$provider', '$nominal', '$tanggal')");
+            $id_users = $_POST['id_users'];
 
+            $isi_pulsa = mysqli_query($koneksi, "INSERT INTO riwayat (no_kartu, provider, nominal, tanggal, id_users) VALUES ('$no_kartu', '$provider', '$nominal', '$tanggal', '$id_users')");
 
             // INSERT INTO `riwayat` (`id`, `no_kartu`, `provider`, `nominal`, `tanggal`, `id_users`) VALUES ('2', '0817042525', 'XL', '10000', '2023-06-01', '1');
             
@@ -95,15 +89,19 @@
     <div class="topNav">
         <div class="containerTopNav">
         <?php while($row = mysqli_fetch_assoc($users)) { ?> 
-            <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3>Rp. <?= $row['saldo'] ?></h3></div>
+            <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3>Rp. <?= number_format($row['saldo']); ?></h3></div>
             <div class="topNavRight"><h5><?= $row['nama'] ?></h5>&nbsp;&nbsp;<i class="fa-regular fa-circle-user fa-xl"></i></div>
         <?php } ?>
+    
         </div>
     </div>
     <!-- Content  -->
     <div class="containerRight">
         <div class="content">
-           <h1>Pulsa</h1>
+           <h1>Pulsa 123</h1>
+           <?php while($display = mysqli_fetch_assoc($allUser)) { ?> 
+        <a href="#"><?= $display['nama'] ?></a> var_dump $display;
+        <?php } ?>
            <form method="post">
                 <input type="hidden" name="id_users" value="1">
                 <input type="date" name="tanggal" value='<?php date('Y-m-d'); ?>' >

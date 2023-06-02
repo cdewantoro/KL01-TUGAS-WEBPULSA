@@ -1,17 +1,17 @@
 <?php include 'koneksi.php';?>
 <?php
-     $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id=1");
-     $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id=1");
+    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
     while($row = mysqli_fetch_assoc($hasil)){
-        $id = $row["id"];
+        $id = $row["id_users"];
         $nama = $row["nama"];
         $saldo = $row["saldo"];
     }
 
     function get_info() {
         global $saldo, $nama, $id, $koneksi;
-        $index = 2;
-        $buku = mysqli_query($koneksi, "SELECT * FROM users WHERE id=$id");
+        $index = 1;
+        $buku = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=$id");
     }
 
     get_info();

@@ -1,26 +1,25 @@
 <?php include 'koneksi.php';?>
 <?php
-    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id=1");
-    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id=1");
+    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=2");
+    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=2");
     while($row = mysqli_fetch_assoc($hasil)){
-        $id = $row["id"];
+        $id = $row["id_users"];
         $nama = $row["nama"];
         $saldo = $row["saldo"];
     }
 
+
+
     function tambah_saldo(){
         if($_POST) {
             global $saldo, $nama, $id, $koneksi;
+            $idUsers = $_POST['idUsers'];
             $nominalTopUp = $_POST["nominal"];
-            $tambahSaldo = $saldo + $nominalTopUp;
-
-            $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = saldo + $nominalTopUp WHERE id = $id");
-
-
+            $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = saldo + $nominalTopUp where id_users=$idUsers ");
+            
         }
     }
     
-    tambah_saldo();
 
 ?>
 
@@ -47,7 +46,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
     <!-- Tugas Webpulsa CSS -->
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- Navigasi Kiri -->
@@ -70,7 +69,9 @@
     <div class="topNav">
         <div class="containerTopNav">
         <?php while($row = mysqli_fetch_assoc($users)) { ?> 
-            <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3>Rp. <?= $row['saldo'] ?></h3></div>
+            <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3>Rp.
+                <?= number_format($row['saldo']); ?>
+            </h3></div>
             <div class="topNavRight"><h5><?= $row['nama'] ?></h5>&nbsp;&nbsp;<i class="fa-regular fa-circle-user fa-xl"></i></div>
         <?php } ?>
         </div>
@@ -80,9 +81,10 @@
         <div class="content">
            <h1>Top Up</h1>
            <form method="post">
+                <input type="hidden" name="idUsers" value="2">
                 <input type="number" name="nominal" placeholder="masukkan jumlah uang">
                 <br>
-                <button type="submit">Kirim</button>
+                <button type="submit">Kirim <?= tambah_saldo(); ?></button>
             </form>
         </div>
     </div>
