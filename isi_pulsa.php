@@ -1,7 +1,10 @@
 <?php include 'koneksi.php';?>
 <?php
-    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=2");
-    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=2");
+
+    // fetch databse untuk menampilkan user dan saldo 
+
+    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
     while($row = mysqli_fetch_assoc($hasil)){
         $id = $row["id_users"];
         $nama = $row["nama"];
@@ -9,6 +12,7 @@
     }
 
 
+    //  fungsi untuk menambahkan saldo 
 
     function tambah_saldo(){
         if($_POST) {
@@ -29,7 +33,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Top Up Pulsa</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -68,11 +72,16 @@
     <!-- Navigasi Atas Status dan User -->
     <div class="topNav">
         <div class="containerTopNav">
+       
+        <!-- menampilkan saldo -->
         <?php while($row = mysqli_fetch_assoc($users)) { ?> 
             <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3>Rp.
                 <?= number_format($row['saldo']); ?>
             </h3></div>
+            
+            <!-- menampilkan nama user -->
             <div class="topNavRight"><h5><?= $row['nama'] ?></h5>&nbsp;&nbsp;<i class="fa-regular fa-circle-user fa-xl"></i></div>
+
         <?php } ?>
         </div>
     </div>
@@ -80,8 +89,9 @@
     <div class="containerRight">
         <div class="content">
            <h1>Top Up</h1>
+           <!-- form untuk menambahkan saldo / top up -->
            <form method="post">
-                <input type="hidden" name="idUsers" value="2">
+                <input type="hidden" name="idUsers" value="1">
                 <input type="number" name="nominal" placeholder="masukkan jumlah uang">
                 <br>
                 <button type="submit">Kirim <?= tambah_saldo(); ?></button>

@@ -1,5 +1,9 @@
 <?php include 'koneksi.php';?>
 <?php
+
+
+    // fetch databse untuk menampilkan user dan saldo 
+
     $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
     $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
     while($row = mysqli_fetch_assoc($hasil)){
@@ -7,6 +11,8 @@
         $nama = $row["nama"];
         $saldo = $row["saldo"];
     }
+
+    // fungsi fetch riwayat ke table
 
     function getRiwayat() {
         global $saldo, $nama, $id, $koneksi, $lihatRiwayat;        
@@ -61,8 +67,11 @@
     <!-- Navigasi Atas Status dan User -->
     <div class="topNav">
         <div class="containerTopNav">
+        <!-- menampilkan saldo -->
         <?php while($row = mysqli_fetch_assoc($users)) { ?> 
             <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3>Rp. <?= number_format($row['saldo']); ?></h3></div>
+
+            <!-- menampilkan nama user -->
             <div class="topNavRight"><h5><?= $row['nama'] ?></h5>&nbsp;&nbsp;<i class="fa-regular fa-circle-user fa-xl"></i></div>
         <?php } ?>
         </div>
@@ -81,6 +90,7 @@
                 </tr>
             </thead>
             <tbody>
+            <!-- menampilkan table riwayat -->
             <?php while($row= mysqli_fetch_assoc($lihatRiwayat)) { ?>
                 <tr>
                     <td><?= $row['tanggal'] ?></td>

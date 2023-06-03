@@ -1,9 +1,8 @@
 <?php include 'koneksi.php';?>
 <?php
+    // fetch databse untuk menampilkan user dan saldo 
     $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
     $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
-
-    $allUser = mysqli_query($koneksi, "SELECT * FROM users");
 
     while($row = mysqli_fetch_assoc($hasil)){
         $id = $row["id_users"];
@@ -11,9 +10,12 @@
         $saldo = $row["saldo"];
     }
 
-    while($display = mysqli_fetch_assoc($allUser)) {
-        $lihatID = $display["nama"];
-    }
+    // $allUser = mysqli_query($koneksi, "SELECT * FROM users");
+    // while($display = mysqli_fetch_assoc($allUser)) {
+    //     $lihatID = $display["nama"];
+    // }
+
+    // fungsi untuk mengirim pulsa mengurangi saldo
 
     function kirim_pulsa(){
         if($_POST) {
@@ -32,9 +34,7 @@
             $id_users = $_POST['id_users'];
 
             $isi_pulsa = mysqli_query($koneksi, "INSERT INTO riwayat (no_kartu, provider, nominal, tanggal, id_users) VALUES ('$no_kartu', '$provider', '$nominal', '$tanggal', '$id_users')");
-
-            // INSERT INTO `riwayat` (`id`, `no_kartu`, `provider`, `nominal`, `tanggal`, `id_users`) VALUES ('2', '0817042525', 'XL', '10000', '2023-06-01', '1');
-            
+           
         }
         // return get_info();
     }
@@ -49,7 +49,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kirim Pulsa</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -89,7 +89,11 @@
     <div class="topNav">
         <div class="containerTopNav">
         <?php while($row = mysqli_fetch_assoc($users)) { ?> 
+
+            <!-- menampilkan saldo -->
             <div class="topNavLeft"><i class="fa-solid fa-wallet fa-xl"></i>&nbsp;&nbsp;<h3>Rp. <?= number_format($row['saldo']); ?></h3></div>
+
+            <!-- menampilkan nama user -->
             <div class="topNavRight"><h5><?= $row['nama'] ?></h5>&nbsp;&nbsp;<i class="fa-regular fa-circle-user fa-xl"></i></div>
         <?php } ?>
     
@@ -98,13 +102,11 @@
     <!-- Content  -->
     <div class="containerRight">
         <div class="content">
-           <h1>Pulsa 123</h1>
-           <?php while($display = mysqli_fetch_assoc($allUser)) { ?> 
-        <a href="#"><?= $display['nama'] ?></a> var_dump $display;
-        <?php } ?>
+           <h1>Kirim Pulsa</h1>
+           <!-- Form untuk mengirimkan pulsa  -->
            <form method="post">
                 <input type="hidden" name="id_users" value="1">
-                <input type="date" name="tanggal" value='<?php date('Y-m-d'); ?>' >
+                <input type="hidden" name="tanggal" value='<?php $currentDate = date('Y-m-d'); echo $currentDate; ?>' >
                 <input type="number" name="no_kartu" placeholder="masukkan no hp">
                 <br>
                 <input type="number" name="nominal" placeholder="masukkan jumlah pulsa">
@@ -125,8 +127,6 @@
 </div>
 
 
-
-    
 <!-- JS for bootstrap & dataTable -->
     <!-- dataTable JS -->
     <script>
