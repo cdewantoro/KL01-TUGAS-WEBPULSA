@@ -1,8 +1,8 @@
 <?php include 'koneksi.php';?>
 <?php
     // fetch databse untuk menampilkan user dan saldo 
-    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
-    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=2");
+    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=2");
 
     while($row = mysqli_fetch_assoc($hasil)){
         $id = $row["id_users"];
@@ -105,7 +105,7 @@
            <h1>Kirim Pulsa</h1>
            <!-- Form untuk mengirimkan pulsa  -->
            <form method="post">
-                <input type="hidden" name="id_users" value="1">
+                <input type="hidden" name="id_users" value="2">
                 <input type="hidden" name="tanggal" value='<?php $currentDate = date('Y-m-d'); echo $currentDate; ?>' >
                 <input type="number" name="no_kartu" placeholder="masukkan no hp">
                 <br>

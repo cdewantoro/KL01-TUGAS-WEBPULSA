@@ -16,7 +16,7 @@
 
     function tambah_saldo(){
         if($_POST) {
-            global $saldo, $nama, $id, $koneksi;
+            global $saldo, $nama, $id, $koneksi, $idUsers;
             $idUsers = $_POST['idUsers'];
             $nominalTopUp = $_POST["nominal"];
             $tambah = mysqli_query($koneksi, "UPDATE users SET saldo = saldo + $nominalTopUp where id_users=$idUsers ");

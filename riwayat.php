@@ -4,8 +4,8 @@
 
     // fetch databse untuk menampilkan user dan saldo 
 
-    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
-    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=1");
+    $hasil = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=2");
+    $users = mysqli_query($koneksi, "SELECT * FROM users WHERE id_users=2");
     while($row = mysqli_fetch_assoc($hasil)){
         $id = $row["id_users"];
         $nama = $row["nama"];
@@ -16,7 +16,7 @@
 
     function getRiwayat() {
         global $saldo, $nama, $id, $koneksi, $lihatRiwayat;        
-        $lihatRiwayat = mysqli_query($koneksi, "SELECT * FROM riwayat WHERE id_users=1");
+        $lihatRiwayat = mysqli_query($koneksi, "SELECT * FROM riwayat WHERE id_users=2");
     }
 
     getRiwayat();
