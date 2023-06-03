@@ -1,5 +1,10 @@
 <?php
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 $host = "localhost";
 $user = "root";
 $pass = "";
